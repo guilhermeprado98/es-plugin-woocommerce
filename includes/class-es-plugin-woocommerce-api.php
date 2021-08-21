@@ -170,6 +170,9 @@ class Es_Plugin_Woocommerce_API
 
         $return = $this->call_curl('POST', '/es-calculator/calculator-v2', $data);
 
+
+        print_r($return); exit;
+
         if (isset($return->error)) {
             return;
         }
@@ -246,7 +249,7 @@ class Es_Plugin_Woocommerce_API
     public function send_labels($label_data)
     {
 
-        $return = $this->call_curl('POST', '/es-api/tickets', $label_data);
+        $return = $this->call_curl('POST', '/es-tickets/tickets', $label_data);
         return (object)$return;
     }
 
