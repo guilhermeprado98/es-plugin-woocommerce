@@ -171,7 +171,7 @@ class Es_Plugin_Woocommerce_API
         $return = $this->call_curl('POST', '/es-calculator/calculator-v2', $data);
 
 
-        print_r($return); exit;
+        print_r($return);
 
         if (isset($return->error)) {
             return;
