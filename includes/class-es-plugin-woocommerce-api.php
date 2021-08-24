@@ -50,9 +50,7 @@ class Es_Plugin_Woocommerce_API
     {
         $headers = [
             'Content-Type: application/json',
-            'Accept-Encoding: gzip, deflate',
-            "Key:{$this->key}",
-            "Es-App-Key:{$this->esAppKey}"
+            "es-app-key:{$this->esAppKey}"
         ];
         
 
@@ -163,15 +161,11 @@ class Es_Plugin_Woocommerce_API
         ];
 
 
-        //print_r($data); exit;
-
         if (trim($this->key) <> "") {
             $data['key'] = $this->key;
         }
 
         $return = $this->call_curl('POST', '/es-calculator/calculator-v2', $data);
-
-        var_dump($return);
 
         if (isset($return->error)) {
             return;
